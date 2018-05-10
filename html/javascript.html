@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>javascript</title>
+</head>
+<body>
+    <script type="text/javascript">
+        //质数判断
+        Number.prototype.isPrime = function(){
+            var maxFactor = Math.floor(Math.sqrt(this));//Math.sqrt()返回一个数的平方根。
+            for(var i=2;i<=maxFactor;i++){
+                if(this % i === 0){
+                    return false;
+                }
+            }
+            return true;
+        }
+        var num = 0;
+        console.log(num.isPrime());
+        //异步回调演示
+        function fun(call){
+            console.log(1);
+            call();
+            console.log(2);
+        }
+        fun(function(){
+            console.log(3);
+            setTimeout(()=>{
+                console.log(4);
+            },3000);
+        })
+        //js链式调用的演示
+        function add(num){
+            var count = num;
+            var _b = function(l){
+                count += l;
+                return _b;
+            }
+            _b.valueOf = function(){
+                return count;
+            }
+            return _b;
+        }
+        var c = add(1)(2)(3);
+        console.log(c+1);
+        //冒泡排序；
+        var arra = [32,2,35,6,0,1,2,5,3,2,4,1,8,999,3,1010,467];
+        function bubbleSort(arr){
+            var temp ;
+            for(var i = 0;i<arr.length-1;i++){
+                for(var j = i+1;j<arr.length;j++){
+                    if(arr[j]>arr[i]){
+                        temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
+                    }
+                }
+            }
+            return arr;
+        }
+        console.log(bubbleSort(arra));
+        //选择排序
+        function selectionSort(arr){
+            var temp;
+            for(var i = 0;i<arr.length;i++){
+                for(var j = arr.length-1;j>i;j--){
+                    if(arr[j] > arr[i]){
+                        temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
+                    }
+                }
+            }
+            return arr;
+        }
+        console.log(selectionSort(arra));
+        //快速排序
+        function quickSort(arr){
+            if(arr.length <= 1){
+                return arr;
+            }
+            var pivotIndex = Math.floor(arr.length/2);
+            var pivot = arr.splice(pivotIndex,1)[0];
+            var left = [],right = [];
+            for(var i = 0;i<arr.length;i++){
+                if(arr[i] < pivot){
+                    left.push(arr[i]);
+                }else{
+                    right.push(arr[i])
+                }
+            }
+            return quickSort(left).concat()
+        }
+        //parseInt和map应用
+        let arrInt = [1,2,3,4,5,{'ee':234}];
+        arrInt.map(function(currentValue, index,arr){
+            console.log(currentValue, index,arr,this)
+        },'eee')
+        //求1+2+3+4+n,1——n的和？
+        function countN1(n){
+            var count = 0;
+            for(var i = 1;i<=n;i++){
+                count += i;
+            }
+            return count ;
+        }
+        function countN2(n){
+            count = (n+1)*n/2;
+            return count ;
+        }
+        function countN3(n){
+            var a = 1;
+            var count = 0;
+            add();
+            function add(){
+                if(a<=n){
+                    count += a;
+                    a++;
+                    add();
+                }
+                
+            }
+            return count;
+        }
+        console.log('1+2+3...+n的和：',countN1(20),countN2(20),countN3(20))
+        //Promise实现原理
+        //1、promise应用
+        //生成一个0-2之间的随机数，如果小于1，则等待一段时间后返回成功，否则返回失败：
+        function pTest(resolve,reject){
+            var num = 2*Math.random();
+            setTimeout(()=>{
+                if(num<1){
+                    resolve('ok');
+                }else{
+                    reject('err');
+                }
+            },1000*num);
+        }
+        var p = new Promise(pTest);
+        p.then((res) =>{
+            console.log(res);
+        }).catch(res => {
+            console.log(res)
+        })
+        
+    </script>
+</body>
+</html>

@@ -41,7 +41,7 @@
         console.log(this);
     };
     var p = new Person();
-    console.log(Person.b);
+    console.log(Person.b,Person.a);
     console.log(p.a);
     console.log(p.b);
     //3、prototype、proto和constructor的三角关系(关于js对象、原型的问题，还需要静下心来好好理解)
@@ -88,7 +88,7 @@
     var arr2 = [1,2,3];
     console.log('arr:',arr1 === arr2);
     console.log(NaN === NaN);//false
-    console.log({a:1} === {a:1});
+    console.log({a:1} === {a:1});//false
     console.log('typeof undefined:',typeof undefined);
     console.log('typeof NaN:',typeof NaN);
     console.log('typeof null:',typeof null);
@@ -121,5 +121,11 @@
             console.log("出现次数是"+max);
         }
     }
+    //10、运行结果
+    var x1 = '12.34fff';
+    var x2 = '12.3.4';
+    console.log(parseInt(x1),parseFloat(x1),parseFloat(x2));
+    console.log(Math.ceil(5/2),Math.floor(5/2),Math.round(5/2));
+    //ceil ：对数进行上舍入，floor：对数进行下舍入 round：四舍五入
 </script>
 </html>
