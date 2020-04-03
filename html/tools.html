@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实用方法</title>
+</head>
+<body>
+    <script>
+        //根据size属性换算为我们习惯的文件大小单位
+        function bytesToSize(bytes) {
+            if (bytes === 0) return '0 B';  
+            var k = 1024,
+                sizes = ['B','KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+            var i = Math.floor(Math.log(bytes) / Math.log(k));
+            return (bytes / Math.pow(k, i)).toFixed(1) + ' ' + sizes[i];
+        }
+        console.log(bytesToSize(6939483738))
+    </script>
+</body>
+</html>
