@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css做一些图形</title>
+    <style lang="less">
+        *{
+            margin:0;
+            padding:0;
+        }
+        .sanjiao{
+            width:0;
+            height:0;
+            border:100px solid transparent;
+            /* border-top-color:#3C98D1;
+            border-right-color:#96D1DF;
+            border-bottom-color:#5E5E5E; */
+            border-left-color:#3C98D1;
+        }
+        .yuanzhu {
+           position: relative;
+           height: 200px;
+           width: 50px;
+           background: #5E5E5E;
+           margin: 30px auto;
+           z-index: 999
+        }
+        .yuanzhu:before {
+            position: absolute;
+            top: -10px;
+            content: "";
+            width: 50px;
+            height: 20px;
+            border-radius: 50%;
+            background: #A8A8A8;
+            z-index: 99
+        }
+        .yuanzhu:after {
+            position: absolute;
+            bottom: -10px;
+            content: "";
+            width: 50px;
+            height: 20px;
+            border-radius: 50%;
+            background: #5E5E5E;
+            z-index: 9
+    　　}
+    .wujiaox {
+         width: 0px;
+         height: 0px;
+         position: relative;
+         margin: 30px auto;
+         border: 100px solid transparent;
+         border-bottom: 70px solid #5E5E5E;
+         -webkit-transform: rotate(35deg);/* Safari和Chrome */
+         -moz-transform: rotate(35deg);/* Firefox */
+　　　　　-ms-transform: rotate(35deg);/* IE 9 */
+　　　　　-o-transform: rotate(35deg); /* Opera */
+　　}
+
+　　.wujiaox:after {
+　　　　　　content: "";
+　　　　　　width: 0px;
+　　　　　　height: 0px;
+　　　　　　display: block;
+　　　　　　border-right: 100px solid transparent;
+　　　　　　border-bottom: 70px solid #5E5E5E;
+　　　　　　border-left: 100px solid transparent;
+　　　　　　 position: absolute;
+　　　　　　top: 3px;
+　　　　　　left: -105px;
+　　　　　　-webkit-transform: rotate(-70deg);
+　　　　　　-moz-transform: rotate(-70deg);
+　　　　　　-ms-transform: rotate(-70deg);
+　　　　　　-o-transform: rotate(-70deg);
+　　　}
+
+　　.wujiaox:before {
+　　　　　　content: "";
+　　　　　　width: 0;
+　　　　　　height: 0;
+　　　　　　border-bottom: 80px solid #5E5E5E;
+　　　　　　border-left: 30px solid transparent;
+　　　　　　border-right: 30px solid transparent;
+　　　　　　position: absolute;
+　　　　　　top: -45px;
+　　　　　　left: -65px;
+　　　　　　-webkit-transform: rotate(-35deg);
+　　　　　　-moz-transform: rotate(-35deg);/* 逆时针旋转35度 */
+　　　　　　-ms-transform: rotate(-35deg);
+　　　　　　-o-transform: rotate(-35deg);
+　　　　}
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="sanjiao">
+            
+        </div>
+        <div class="yuanzhu"></div>
+        <style>
+            .items{
+                height:200px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .uls li:nth-child(-n+3){
+                color:red;
+            }
+            .clamp{
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp:3;
+                word-break:break-all;
+                overflow: hidden;
+            }
+        </style>
+        <div class="items">
+            <div class="item">1111</div>
+        </div>
+        <ul class="uls">
+            <li class="li">dagegg</li>
+            <li class="li">dagegg</li>
+            <li class="li">dagegg</li>
+            <li class="li">dagegg</li>
+            <li class="li">dagegg</li>
+            <li class="li">dagegg</li>
+            <li class="li">dagegg</li>
+            <li class="li">dagegg</li>
+        </ul>
+        <div style="height:100px">
+            <div style="width:30px;height:30px;margin:auto;"></div>
+        </div>
+        <p class="clamp">住房和城乡建设部建筑节能与科技司在今年3月底印发的2018年工作要点中提到，要落实新发展理念，充分发挥科技创新的战略支撑作用，以绿色城市建设为导向，深入推进建筑能效提升和绿色建筑发展，稳步发展装配式建筑，加强科技创新能力建设，增添国际科技交流与合作新要素，提升全领域全过程绿色化水平，为推动绿色城市建设打下坚实基础。全文3000多字中，有21处提到绿色建筑，5处绿色城市。
+
+工作要点指出，整合健康建筑、可持续建筑、百年建筑、装配式建筑等新理念新成果，扩展绿色建筑内涵，对标新时代高质量绿色建筑品质，修订《绿色建筑评价标准》，满足人民群众对优质绿色建筑产品的需要。开展绿色城市、绿色社区、绿色生态小区、绿色校园、绿色医院创建，组织实施试点示范。引导有条件地区和城市新建建筑全面执行绿色建筑标准，扩大绿色建筑强制推广范围，力争到今年底，城镇绿色建筑占新建建筑比例达到40%。进一步完善绿色建筑评价标识管理，建立第三方评价机构诚信管理制度，加强对绿色建筑特别是三星级绿色建筑项目的建设及运行质量评估。</p>
+    </div>
+</body>
+</html>
